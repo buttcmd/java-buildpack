@@ -25,6 +25,12 @@
 
 		<Engine defaultHost='localhost' name='Catalina'>
 			<Valve className="org.apache.catalina.valves.RemoteIpValve" protocolHeader="x-forwarded-proto"/>
+			
+			<Realm className="org.apache.catalina.realm.JAASRealm"
+               			 appName="M2SRealm"
+    			  userClassNames="m2s.security.JAASPrincipalUser"
+     			  roleClassNames="m2s.security.JAASPrincipalRole"/>
+     	
 			<Host name='localhost'>
 				<Listener className="com.gopivotal.cloudfoundry.tomcat.lifecycle.ApplicationStartupFailureDetectingLifecycleListener"/>
 			</Host>
