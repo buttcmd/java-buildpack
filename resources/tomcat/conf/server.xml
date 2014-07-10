@@ -74,11 +74,6 @@
     <Engine name="Catalina" defaultHost="localhost" jvmRoute="jvm1">
     -->
     <Engine defaultHost="localhost" name="Catalina">
-
-	  <Realm className="org.apache.catalina.realm.JAASRealm"
-                   appName="M2SRealm"
-    	    userClassNames="m2s.security.JAASPrincipalUser"
-     	    roleClassNames="m2s.security.JAASPrincipalRole"/>
     	
 	  <Host name='localhost'>
 	     <Listener className="com.gopivotal.cloudfoundry.tomcat.lifecycle.ApplicationStartupFailureDetectingLifecycleListener"/>
